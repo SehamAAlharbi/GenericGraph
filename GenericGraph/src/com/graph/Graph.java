@@ -12,7 +12,8 @@ import java.util.*;
 
 public class Graph <K,E> {
 	
-	Map <K, List<Node<K,E>>> graph = null;
+	// representation of each node
+	Map <Integer, List<Node<K,E>>> graph = null;
 	
 	public Graph (){
 		graph = new HashMap <> ();
@@ -23,7 +24,7 @@ public class Graph <K,E> {
 	 * @param v1 start vertex 
 	 * @param v2 end vertex
 	 * @param edgeLable the weight 
-	 * @return
+	 * @return true if the addition is done 
 	 */
 	public boolean addDirectEdge( K v1 , K v2, E edgeLabel) {
 		
