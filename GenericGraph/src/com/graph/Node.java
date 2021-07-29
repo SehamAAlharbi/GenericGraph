@@ -1,6 +1,5 @@
 package com.graph;
 
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -13,16 +12,16 @@ import java.util.UUID;
 public class Node <K, E>{
 	
 	K key = null;
-	List <K> endNodes = null;
+	K endNode = null;
 	E edgeLabel = null;
-	UUID uniqueKey = null;
+
 	
 	
-	public Node (K key, List <K> endNodes, E edgeLable) {
+	public Node (K key, K endNode, E edgeLable) {
 		this.key = key;
-		this.endNodes = endNodes;
+		this.endNode = endNode;
 		this.edgeLabel = edgeLable;
-		this.uniqueKey = generateID ();
+		
 	} 
 	
 	/**
@@ -52,6 +51,6 @@ public class Node <K, E>{
 	 * To print the node data whenever needed
 	 */
 	public String toString () {
-		return " { Key: " + key + " , End Node: " + endNodes + " , Edge Label: " + edgeLabel + " } " ;
+		return " { Key: " + key + " , End Node: " + endNode + " , Edge Label: " + edgeLabel + " } " ;
 	}
 }

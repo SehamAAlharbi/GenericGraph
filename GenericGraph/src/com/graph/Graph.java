@@ -12,8 +12,8 @@ import java.util.*;
 
 public class Graph <K,E> {
 	
-	// representation of each node
-	Map <Integer, List<Node<K,E>>> graph = null;
+	// Representation of each node, and its edges with the other nodes
+	Map <K, List<Node<K,E>>> graph = null;
 	
 	public Graph (){
 		graph = new HashMap <> ();
@@ -24,7 +24,7 @@ public class Graph <K,E> {
 	 * @param v1 start vertex 
 	 * @param v2 end vertex
 	 * @param edgeLable the weight 
-	 * @return true if the addition is done 
+	 * @return
 	 */
 	public boolean addDirectEdge( K v1 , K v2, E edgeLabel) {
 		
@@ -58,7 +58,7 @@ public class Graph <K,E> {
 
 
 		// a flag to keep track of the visited node to avoid infinite calls
-		HashSet<k> visited = new HashSet<k>();
+		HashSet<K> visited = new HashSet<K>();
 
 		// sending the nodes after retrieving them using their id's - calling the other
 		// overloaded method
@@ -74,7 +74,7 @@ public class Graph <K,E> {
 	 * @param visited
 	 * @return
 	 */
-	private boolean hasPathDFS(Node source, Node destination, HashSet<Node> visited) {
+	private boolean hasPathDFS(K source, K destination, HashSet<K> visited) {
 
 		// if the node has been visited before and no path found - using id because the
 		// hash set keep only integers
@@ -94,7 +94,7 @@ public class Graph <K,E> {
 		// final option is to start looping through all adjacent nodes and their
 		// adjacent nodes till finding -d-
 		
-		for (Node<K, E> child : graph.get(source)) {
+		for (K child : graph.keySet()) {
 			if (hasPathDFS(child, destination, visited)) {
 				return true;
 			}
